@@ -51,3 +51,130 @@
   padding: 0 32px !important;
   z-index: 2 !important;
 }
+
+
+/* === v7.10: THE HOW — overlay info on image per Figma ===
+   Card 345×460 (3:4 aspect). Info overlays bottom 127px with dark gradient.
+   Per Figma: play button y=550 in card y=201-661 → bottom: 65px; size 46px.
+   Title y=608, stars y=624, meta y=632; gradient extends 180px above bottom. */
+
+.pdp-the-how {
+  background-color: var(--pdp-color-porcelain) !important;
+  padding: 60px 0 80px !important;
+}
+
+.pdp-the-how__header {
+  margin-bottom: 32px !important;
+}
+
+.pdp-how-card {
+  position: relative !important;
+  aspect-ratio: 345/460 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background-color: var(--pdp-color-charcoal) !important;
+}
+
+.pdp-how-card__image-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  aspect-ratio: auto !important;
+}
+
+.pdp-how-card__image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.pdp-how-card__play {
+  position: absolute !important;
+  bottom: 65px !important;
+  left: 16px !important;
+  top: auto !important;
+  width: 46px !important;
+  height: 46px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 3 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pdp-how-card__play svg {
+  width: 12px !important;
+  height: 14px !important;
+  fill: var(--pdp-color-white) !important;
+  margin-left: 2px !important;
+}
+
+.pdp-how-card__info {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  padding: 0 16px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  z-index: 2 !important;
+  background: transparent !important;
+}
+
+.pdp-how-card__info::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 180px !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%) !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+.pdp-how-card__title {
+  font-family: var(--pdp-font-heading) !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: var(--pdp-color-white) !important;
+  margin: 0 0 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16px;
+}
+
+.pdp-how-card__meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--pdp-font-body) !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  color: var(--pdp-color-white) !important;
+  letter-spacing: 0.11px;
+}
+
+.pdp-how-card__meta-stars {
+  display: flex !important;
+  gap: 1px !important;
+}
+
+.pdp-how-card__meta-stars svg {
+  width: 10px !important;
+  height: 10px !important;
+  fill: #FFB800 !important;
+}
+
+@media (max-width: 768px) {
+  .pdp-the-how {
+    padding: 40px 0 56px !important;
+  }
+}
