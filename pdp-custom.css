@@ -18,3 +18,36 @@
   mix-blend-mode: multiply !important;
   opacity: 1 !important;
 }
+
+
+/* === v7.9: 21FREE — refined Figma-exact metrics ===
+   Drop: y=-49 relative to section y=15 (page coords) → -64/431 = -14.85% ≈ -15%
+   Tags: row1 starts at y=216 in 431 section → 50%, row3 ends at y=365 → 85%
+   So tags span 50%–85% (3 rows flowing down from top:50%, no translate). */
+
+.pdp-21free__image {
+  width: 72% !important;
+  height: auto !important;
+  top: -15% !important;
+  left: 8% !important;
+  right: auto !important;
+  transform: none !important;
+  object-fit: contain !important;
+  mix-blend-mode: multiply !important;
+  opacity: 1 !important;
+}
+
+.pdp-21free__tags {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  transform: none !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 8px 12px !important;
+  padding: 0 32px !important;
+  z-index: 2 !important;
+}
