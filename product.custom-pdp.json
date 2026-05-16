@@ -1,0 +1,268 @@
+{
+  "sections": {
+    "info-bar": {
+      "type": "pdp-info-bar",
+      "disabled": true,
+      "settings": {
+        "text_1": "Fast day to day delivery on orders before 14",
+        "text_2": "Free delivery on orders over €69",
+        "text_3": "Most award-winning Danish nail brand"
+      }
+    },
+    "hero": {
+      "type": "pdp-hero",
+      "blocks": {
+        "subtitle": {
+          "type": "subtitle",
+          "settings": {
+            "text": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "text": ""
+          }
+        },
+        "stock": {
+          "type": "stock",
+          "settings": {
+            "in_stock_label": "In stock",
+            "suffix": "fast selling product",
+            "out_of_stock_label": "Out of stock"
+          }
+        },
+        "usp_grid": {
+          "type": "usp_grid",
+          "settings": {
+            "usp_1_strong": "21FREE",
+            "usp_1_text": "signature formula",
+            "usp_2_strong": "Vegan",
+            "usp_2_text": "- no animal-derived ingredients",
+            "usp_3_strong": "Free from",
+            "usp_3_text": "TPO, Hema, Di-Hema, etc.",
+            "usp_4_strong": "30-Day full satisfaction",
+            "usp_4_text": "guarantee."
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "label_add": "Add to basket",
+            "label_sold_out": "Sold out",
+            "show_wishlist": true
+          }
+        },
+        "loyalty": {
+          "type": "loyalty",
+          "settings": {
+            "text_before": "You earn",
+            "text_after": "on this item with The Gel Club"
+          }
+        },
+        "divider-1": {
+          "type": "divider",
+          "settings": {
+            "margin_top": 24
+          }
+        },
+        "trustpilot": {
+          "type": "trustpilot",
+          "settings": {
+            "rating": "4.9 of 5",
+            "reviews": "7,000 reviews"
+          }
+        },
+        "awards_row": {
+          "type": "awards_row",
+          "settings": {
+            "award_link_1": "",
+            "award_alt_1": "",
+            "award_link_2": "",
+            "award_alt_2": "",
+            "award_link_3": "",
+            "award_alt_3": "",
+            "award_link_4": "",
+            "award_alt_4": "",
+            "award_link_5": "",
+            "award_alt_5": "",
+            "award_link_6": "",
+            "award_alt_6": "",
+            "award_link_7": "",
+            "award_alt_7": "",
+            "award_link_8": "",
+            "award_alt_8": ""
+          }
+        },
+        "divider-2": {
+          "type": "divider",
+          "settings": {
+            "margin_top": 32
+          }
+        },
+        "reels": {
+          "type": "reels",
+          "settings": {}
+        },
+        "divider-3": {
+          "type": "divider",
+          "settings": {
+            "margin_top": 24
+          }
+        },
+        "pairs_with": {
+          "type": "pairs_with",
+          "settings": {
+            "heading": "Pairs perfectly with"
+          }
+        },
+        "divider-4": {
+          "type": "divider",
+          "settings": {
+            "margin_top": 24
+          }
+        },
+        "accordion_group": {
+          "type": "accordion_group",
+          "settings": {
+            "heading": "Product details",
+            "show_description": true,
+            "description_label": "Description",
+            "show_ingredients": true,
+            "ingredients_label": "Ingredients",
+            "show_delivery": true,
+            "delivery_label": "Delivery and returns",
+            "delivery_text": "<p>Fast day-to-day delivery on all orders placed before 14:00 CET. Free shipping on orders over €69. You can return your order within 30 days of receiving it.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle",
+        "title",
+        "rating",
+        "price",
+        "description",
+        "stock",
+        "usp_grid",
+        "buy_buttons",
+        "loyalty",
+        "divider-1",
+        "trustpilot",
+        "awards_row",
+        "divider-2",
+        "reels",
+        "divider-3",
+        "pairs_with",
+        "divider-4",
+        "accordion_group"
+      ],
+      "settings": {
+        "cents_separator": ","
+      }
+    },
+    "twentyone-free": {
+      "type": "pdp-21free",
+      "settings": {
+        "badge_text": "21FREE™",
+        "heading": "Free from what's not necessary.",
+        "body_text": "Our gel polish is free from 21 unwanted chemicals including TPO, Hema, and Di-Hema. Beauty without compromise — salon quality made for home.",
+        "cta_text": "Discover 21FREE",
+        "cta_url": "",
+        "tags_list": "Hema,Di-HEMA,Hydroquinone,TPO,Parabens,Fragrance,Formaldehyde,Formaldehyde resin,TMPTA,Animal-derived ingredients,Xylene,Colophonium,Tosylamide,Benzophenone"
+      }
+    },
+    "the-how": {
+      "type": "pdp-the-how",
+      "blocks": {
+        "video-1": {
+          "type": "video_card",
+          "settings": {
+            "title": "How to apply Gel Polish",
+            "youtube_url": "",
+            "rating": "4.9",
+            "duration": "20 min"
+          }
+        },
+        "video-2": {
+          "type": "video_card",
+          "settings": {
+            "title": "How to apply Gel Polish",
+            "youtube_url": "",
+            "rating": "4.9",
+            "duration": "20 min"
+          }
+        },
+        "video-3": {
+          "type": "video_card",
+          "settings": {
+            "title": "How to apply Gel Polish",
+            "youtube_url": "",
+            "rating": "4.9",
+            "duration": "20 min"
+          }
+        },
+        "video-4": {
+          "type": "video_card",
+          "settings": {
+            "title": "How to apply Gel Polish",
+            "youtube_url": "",
+            "rating": "4.9",
+            "duration": "20 min"
+          }
+        }
+      },
+      "block_order": ["video-1", "video-2", "video-3", "video-4"],
+      "settings": {
+        "heading": "The How",
+        "description": "Step-by-step guides showing exactly how to use this product with ease."
+      }
+    },
+    "the-looks": {
+      "type": "customer-looks-row",
+      "settings": {
+        "eyebrow": "GET INSPIRED",
+        "heading": "THE LOOKS",
+        "subtitle": "Popular looks following the latest trends — find inspiration and add products straight to cart.",
+        "count": 12,
+        "cta_text": "Se alle looks",
+        "cta_link": ""
+      }
+    },
+    "reviews": {
+      "type": "pdp-reviews",
+      "settings": {
+        "subheadline": "Subheadline",
+        "heading": "The Recommendations"
+      }
+    },
+    "perfect-match": {
+      "type": "pdp-perfect-match",
+      "settings": {
+        "subheadline": "Subheadline",
+        "heading": "The Perfect Match",
+        "description": "Match with your favorites and upgrade your routine with products that work perfectly together."
+      }
+    }
+  },
+  "order": [
+    "info-bar",
+    "hero",
+    "twentyone-free",
+    "the-how",
+    "the-looks",
+    "reviews",
+    "perfect-match"
+  ]
+}
