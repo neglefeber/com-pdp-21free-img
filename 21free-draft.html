@@ -438,6 +438,7 @@
   }
   .press-strip__visual--logo img {
     max-height: 64px;
+    max-width: 100%;
     object-fit: contain;
   }
   .press-strip__visual--medal img {
@@ -447,6 +448,11 @@
   .press-strip__visual--medal-ehandel img {
     max-height: 124px;
     transform: translateY(4px);
+  }
+  /* Costume wordmark is single-line — make wider so it has same visual presence as Vogue's stacked logo */
+  .press-strip__visual--logo-costume img {
+    max-height: 36px;
+    max-width: 220px;
   }
 
   /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
@@ -849,7 +855,7 @@
           <a class="press-strip__item"
              href="https://woman.dk/skoenhed/skoenhedsfavoritter/her-er-vinderne-af-costume-skoenhedsfavoritter-2025"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual press-strip__visual--logo">
+            <div class="press-strip__visual press-strip__visual--logo press-strip__visual--logo-costume">
               <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-costume.png"
                    alt="Costume">
             </div>
