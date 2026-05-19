@@ -433,14 +433,12 @@
     margin-bottom: 2px;
     letter-spacing: 1.6px;
   }
-  /* Vogue serif wordmark — recreates the iconic look */
-  .vogue-wordmark {
-    font-family: "Didot", "Bodoni 72", "Bodoni MT", "GFS Didot", "Playfair Display", Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 1;
-    letter-spacing: 4px;
-    color: var(--charcoal);
+  .press-strip__visual--logo img {
+    max-height: 56px;
+    object-fit: contain;
+  }
+  .press-strip__visual--medal img {
+    max-height: 80px;
   }
 
   /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
@@ -671,7 +669,6 @@
     .manifesto__grid { grid-template-columns: 1fr; gap: 48px; }
     .awards__grid { grid-template-columns: 1fr; gap: 16px; }
     .press-strip { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .vogue-wordmark { font-size: 36px; }
     .compare__grid { grid-template-columns: 1fr; }
     .trust__grid { grid-template-columns: repeat(2, 1fr); }
     .details__item { grid-template-columns: 56px 1fr; }
@@ -814,27 +811,28 @@
           <a class="press-strip__item"
              href="https://www.voguescandinavia.com/articles/3-at-home-diy-alternatives-to-your-next-nail-appointment"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual">
-              <span class="vogue-wordmark">VOGUE</span>
+            <div class="press-strip__visual press-strip__visual--logo">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-vogue-scandinavia.png"
+                   alt="Vogue Scandinavia">
             </div>
-            <span class="press-strip__caption"><strong>Scandinavia</strong>Feature · 2023</span>
+            <span class="press-strip__caption"><strong>Feature</strong>November 2023</span>
           </a>
 
           <a class="press-strip__item"
              href="https://www.danskerhverv.dk/branche/digital-handel/e-handelsprisen/tidligere-vindere/e-handelsprisen-2023/"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual">
+            <div class="press-strip__visual press-strip__visual--medal">
               <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-8.png"
-                   alt="E-Handelsprisen Vinder 2024">
+                   alt="E-Handelsprisen Vinder">
             </div>
             <span class="press-strip__caption"><strong>E-Handelsprisen</strong>Vinder 2023 &amp; 2024</span>
           </a>
 
           <a class="press-strip__item"
-             href="https://danishbeautyaward.dk/"
+             href="https://www.danishbeautyaward.dk/2024"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual">
-              <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-2.png"
+            <div class="press-strip__visual press-strip__visual--medal">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-dba-2024-winner.png"
                    alt="Danish Beauty Award Vinder 2024">
             </div>
             <span class="press-strip__caption"><strong>Danish Beauty Award</strong>Vinder 2024</span>
@@ -843,11 +841,11 @@
           <a class="press-strip__item"
              href="https://woman.dk/skoenhed/skoenhedsfavoritter/her-er-vinderne-af-costume-skoenhedsfavoritter-2025"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual">
-              <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-6.png"
-                   alt="Costume Skønhedsfavoritter Vinder 2025">
+            <div class="press-strip__visual press-strip__visual--logo">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-costume.svg"
+                   alt="Costume">
             </div>
-            <span class="press-strip__caption"><strong>Costume</strong>Vinder 2023 · 2024 · 2025</span>
+            <span class="press-strip__caption"><strong>Skønhedsfavoritter</strong>Vinder 2023 · 2024 · 2025</span>
           </a>
         </div>
       </div>
