@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>21FREE™ — Neglefeber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --mahogany: #601119;
+    --charcoal: #2D2D2D;
+    --arctic: #FCFBFB;
+    --porcelain: #F8F7F6;
+    --linen: #F1EFED;
+    --fog: #E7E5E3;
+    --green: #10682f;
+    --green-tint: #10682f1a;
+    --font-body: 'Nimbus Sans Novus', system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-display: 'Nimbus Sans Novus Cond', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
+    --radius: 2px;
+    --page-pad: 80px;
+    --max: 1600px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; letter-spacing: 0; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--arctic);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+  }
+
+  /* TYPOGRAPHY */
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0;
+    margin: 0;
+    color: var(--charcoal);
+  }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 16px;
+  }
+
+  /* PRIMARY BUTTON (mahogany, matches PDP CTA) */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mahogany);
+    color: var(--arctic);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 28px;
+    height: 50px;
+    border-radius: var(--radius);
+    transition: opacity .2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.9; color: var(--arctic); }
+  .btn--outline {
+    background: transparent;
+    color: var(--charcoal);
+    border: 1px solid var(--charcoal);
+  }
+  .btn--outline:hover { background: var(--charcoal); color: var(--arctic); }
+
+  /* ===== HERO (matches PDP 21FREE pattern: arctic card on porcelain bg) ===== */
+  .hero {
+    background: var(--porcelain);
+    padding: 64px 0 96px;
+  }
+  .hero__card {
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 47% 1fr;
+    align-items: stretch;
+    min-height: 540px;
+  }
+  .hero__content {
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero__badge-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--green-tint);
+    color: var(--charcoal);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+  }
+  .hero__hashtag {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 2px;
+  }
+  .hero__title {
+    font-size: clamp(44px, 5.4vw, 88px);
+    line-height: 0.92;
+    margin: 0 0 28px;
+  }
+  .hero__lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    margin: 0 0 36px;
+    max-width: 460px;
+  }
+  .hero__cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    background: var(--arctic);
+  }
+  .hero__drop {
+    position: absolute;
+    width: 110%;
+    height: auto;
+    top: -8%;
+    left: -2%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  /* ===== INLINE TRUST STRIP (subtle, no dark bg) ===== */
+  .trust-strip {
+    background: var(--arctic);
+    border-top: 1px solid var(--fog);
+    border-bottom: 1px solid var(--fog);
+    padding: 24px 0;
+  }
+  .trust-strip__row {
+    display: flex;
+    gap: 56px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .trust-strip__item {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.85;
+  }
+  .trust-strip__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--mahogany);
+    opacity: 0.4;
+  }
+
+  /* ===== SECTION DEFAULTS ===== */
+  section { padding: 120px 0; }
+  .section__head {
+    max-width: 760px;
+    margin: 0 0 64px;
+  }
+  .section__head--center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .section__title {
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1;
+    margin: 0 0 20px;
+  }
+  .section__lede {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+    margin: 0;
+    max-width: 560px;
+  }
+  .section__head--center .section__lede { margin: 0 auto; }
+
+  /* ===== MANIFESTO (porcelain bg, 2-col text + image) ===== */
+  .manifesto {
+    background: var(--porcelain);
+  }
+  .manifesto__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .manifesto__title {
+    font-size: clamp(40px, 4.8vw, 64px);
+    line-height: 1;
+    margin: 0 0 28px;
+  }
+  .manifesto__body p {
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0 0 16px;
+    color: var(--charcoal);
+  }
+  .manifesto__media {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .manifesto__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ===== AWARDS (3 team photos with judge quotes) ===== */
+  .awards {
+    background: var(--linen);
+  }
+  .awards__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .award-card {
+    background: var(--porcelain);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .award-card__media {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--linen);
+  }
+  .award-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .award-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--mahogany);
+    color: var(--arctic);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    border-radius: var(--radius);
+    line-height: 1;
+  }
+  .award-card__body {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .award-card__source {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--mahogany);
+    margin: 0 0 8px;
+  }
+  .award-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 20px;
+  }
+  .award-card__quote {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+    quotes: """ """;
+    flex: 1;
+  }
+  .award-card__quote::before {
+    content: open-quote;
+  }
+  .award-card__quote::after {
+    content: close-quote;
+  }
+  .award-card__attr {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--charcoal);
+    opacity: 0.65;
+    letter-spacing: 0.3px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .award-card__attr a {
+    color: var(--mahogany);
+    text-decoration: none;
+    border-bottom: 1px solid var(--mahogany);
+    padding-bottom: 1px;
+  }
+  .award-card__attr a:hover { opacity: 0.7; }
+  .awards__press {
+    margin: 72px 0 0;
+    padding-top: 48px;
+    border-top: 1px solid var(--fog);
+  }
+  .awards__press-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.55;
+    text-align: center;
+    margin: 0 0 32px;
+  }
+  .press-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: center;
+    justify-items: center;
+  }
+  .press-strip__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--charcoal);
+    transition: opacity .2s ease;
+    padding: 12px 8px;
+    width: 100%;
+    text-align: center;
+  }
+  .press-strip__item:hover { opacity: 0.7; }
+  .press-strip__visual {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .press-strip__visual img {
+    max-height: 64px;
+    width: auto;
+    display: block;
+  }
+  .press-strip__caption {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.65;
+    line-height: 1.4;
+  }
+  .press-strip__caption strong {
+    display: block;
+    font-weight: 700;
+    color: var(--mahogany);
+    opacity: 1;
+    font-size: 12px;
+    margin-bottom: 2px;
+    letter-spacing: 1.6px;
+  }
+  .press-strip__visual {
+    height: 140px;
+  }
+  .press-strip__visual--logo img {
+    max-height: 64px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .press-strip__visual--medal img {
+    max-height: 140px;
+  }
+  /* E-handelsprisen badge has a dangling gold sub-tag — needs more space so main circle matches DBA */
+  .press-strip__visual--medal-ehandel img {
+    max-height: 160px;
+  }
+  /* Costume wordmark — sized to match other logos visually */
+  .press-strip__visual--logo-costume img {
+    max-height: 24px;
+    max-width: 180px;
+  }
+
+  /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
+  .list-21 { background: var(--arctic); }
+  .list-21__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    margin-bottom: 80px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: 32px;
+    padding: 14px 22px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--charcoal);
+    transition: border-color .2s ease;
+  }
+  .chip:hover { border-color: var(--mahogany); }
+  .chip svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  /* Detail accordion below tags */
+  .details {
+    border-top: 1px solid var(--fog);
+  }
+  .details__item {
+    border-bottom: 1px solid var(--fog);
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 32px;
+    padding: 24px 0;
+    align-items: baseline;
+  }
+  .details__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--mahogany);
+    letter-spacing: 0.5px;
+  }
+  .details__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0;
+    line-height: 1;
+  }
+  .details__desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  /* ===== EDITORIAL COMPARE (light, two columns side by side) ===== */
+  .compare {
+    background: var(--porcelain);
+  }
+  .compare__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .compare__col {
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+  }
+  .compare__col--us {
+    border-color: var(--charcoal);
+  }
+  .compare__col-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.55;
+    margin: 0 0 12px;
+  }
+  .compare__col--us .compare__col-eyebrow {
+    color: var(--mahogany);
+    opacity: 1;
+  }
+  .compare__col-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 24px;
+  }
+  .compare__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .compare__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--fog);
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--charcoal);
+  }
+  .compare__list li:last-child { border-bottom: 0; }
+  .compare__list-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== TRUST (clean text-driven, no icon boxes) ===== */
+  .trust {
+    background: var(--arctic);
+  }
+  .trust__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .trust__item {
+    padding-top: 24px;
+    border-top: 1px solid var(--fog);
+  }
+  .trust__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--mahogany);
+    letter-spacing: 1.4px;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+  .trust__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 12px;
+  }
+  .trust__text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  /* ===== TESTIMONIAL (clean editorial card) ===== */
+  .testimonial {
+    background: var(--porcelain);
+    text-align: center;
+  }
+  .testimonial__stars {
+    color: var(--mahogany);
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+  }
+  .testimonial__quote {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    max-width: 1000px;
+    margin: 0 auto 24px;
+  }
+  .testimonial__author {
+    font-size: 14px;
+    color: var(--charcoal);
+    opacity: 0.65;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== FINAL CTA (light editorial like PDP 21FREE inverse) ===== */
+  .final {
+    background: var(--arctic);
+    text-align: center;
+  }
+  .final__title {
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+  }
+  .final__lede {
+    max-width: 560px;
+    margin: 0 auto 36px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 990px) {
+    :root { --page-pad: 32px; }
+    .hero { padding: 32px 0 48px; }
+    .hero__card {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero__content { padding: 48px 32px; }
+    .hero__media { min-height: 360px; }
+    .manifesto__grid { grid-template-columns: 1fr; gap: 48px; }
+    .awards__grid { grid-template-columns: 1fr; gap: 16px; }
+    .press-strip { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .compare__grid { grid-template-columns: 1fr; }
+    .trust__grid { grid-template-columns: repeat(2, 1fr); }
+    .details__item { grid-template-columns: 56px 1fr; }
+    .details__desc { grid-column: 1 / -1; padding-left: 56px; }
+    section { padding: 80px 0; }
+    .section__head { margin-bottom: 48px; }
+  }
+
+  @media (max-width: 540px) {
+    :root { --page-pad: 20px; }
+    .hero__content { padding: 40px 24px; }
+    .compare__col { padding: 32px 24px; }
+    .trust__grid { grid-template-columns: 1fr; }
+    .trust-strip__row { gap: 24px; }
+    .details__item { grid-template-columns: 1fr; gap: 8px; }
+    .details__desc { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__card">
+        <div class="hero__content">
+          <div class="hero__badge-row">
+            <span class="hero__badge">21FREE™</span>
+            <a href="#" class="hero__hashtag">#NothingUnnecessary</a>
+          </div>
+          <h1 class="h-display hero__title">Fri for det,<br>du ikke har<br>brug for.</h1>
+          <p class="hero__lede">Vores gel polish er udviklet uden 21 unødvendige kemikalier — fra HEMA og TPO til mikroplastik og PFAS. Salon-kvalitet, fri for kompromis.</p>
+          <div class="hero__cta-row">
+            <a href="/collections/all" class="btn">Shop 21FREE</a>
+            <a href="#manifesto" class="btn btn--outline">Læs mere</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img class="hero__drop"
+               src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/21free-gel-polish.png"
+               alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip__row">
+        <span class="trust-strip__item">Vegan</span>
+        <span class="trust-strip__dot"></span>
+        <span class="trust-strip__item">Cruelty-free</span>
+        <span class="trust-strip__dot"></span>
+        <span class="trust-strip__item">EU-godkendt</span>
+        <span class="trust-strip__dot"></span>
+        <span class="trust-strip__item">Salon-grade</span>
+        <span class="trust-strip__dot"></span>
+        <span class="trust-strip__item">Udviklet i Danmark</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="container">
+      <div class="manifesto__grid">
+        <div>
+          <p class="eyebrow">Manifest</p>
+          <h2 class="h-display manifesto__title">Skønhed uden kompromis</h2>
+          <div class="manifesto__body">
+            <p>De fleste gel polishes indeholder en cocktail af ingredienser, der i bedste fald er overflødige — og i værste fald skadelige for både negle og helbred. Stoffer som HEMA, TPO og formaldehyd skaber dokumenterede allergiske reaktioner, svækker neglene og er forbudt eller stærkt reguleret i flere lande.</p>
+            <p>Vi har skrottet 21 af dem. Tilbage står en formula, der bare virker — og som du kan bruge derhjemme uden bekymring. Det er ikke et marketing-claim. Det er sådan, vi udvikler hver eneste flaske.</p>
+          </div>
+        </div>
+        <div class="manifesto__media">
+          <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/manifesto-image.jpg"
+               alt="Neglefeber 21FREE produkter — gel polish flatlay">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow">Anerkendelser</p>
+        <h2 class="h-display section__title">Dommerne har stemplet 21FREE</h2>
+        <p class="section__lede">Citater nedenfor er ord-for-ord fra Dansk Erhverv, Danish Beauty Award og Costume Skønhedsfavoritter — ikke marketing-claims fra os.</p>
+      </div>
+
+      <div class="awards__grid">
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/Ehandel_169.jpg"
+                 alt="Neglefeber-teamet modtager E-Handelsprisen 2024">
+            <span class="award-card__badge">Vinder 2023 &amp; 2024</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">E-Handelsprisen · Dansk Erhverv</p>
+            <h3 class="award-card__title">Bedste nye e-handelsvirksomhed 2023 &amp; Bedste B2C &lt; 100 mio. kr. 2024</h3>
+            <blockquote class="award-card__quote">I en branche, hvor kemi fylder meget, har de fra starten insisteret på mindre kemi, længere holdbarhed og højere kvalitet. Det betaler sig, for de har skabt en loyal og voksende kundekreds med en genkøbsrate, som kan gøre alle e-handlere misundelige.</blockquote>
+            <p class="award-card__attr">— Juryens begrundelse, E-handelsprisen 2023 · <a href="https://www.danskerhverv.dk/branche/digital-handel/e-handelsprisen/tidligere-vindere/e-handelsprisen-2023/" target="_blank" rel="noopener">danskerhverv.dk</a></p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/dba_169.jpg"
+                 alt="Neglefeber-teamet modtager Danish Beauty Award 2024">
+            <span class="award-card__badge">Vinder 2024</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">Danish Beauty Award</p>
+            <h3 class="award-card__title">Årets Beauty Accessory 2024</h3>
+            <blockquote class="award-card__quote">Et imponerende stykke arbejde, der ligger bag hele dette brand. En imponerende samling tools, som dommerne fik til vurdering samlet i en gennemført taske, der holder styr på al grejet.</blockquote>
+            <p class="award-card__attr">— Dommernes begrundelse, Danish Beauty Award 2024</p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/Screenshot_2024-09-19_at_12.49.38.png"
+                 alt="Costume Skønhedsfavoritter — diplomer">
+            <span class="award-card__badge">Vinder 2023 · 2024 · 2025</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">Costume Skønhedsfavoritter</p>
+            <h3 class="award-card__title">Neglesæt 2023 · Innovation 2024 · Selfcare 2025</h3>
+            <blockquote class="award-card__quote">Med The Gel Collection som indeholder både press on tipper og gel-produkter kan du selv prøve kræfter med at lave din egen shellac-lignende manicure derhjemme. Udover at være pæne, er de smarte produkter også ekstra skånsomme for dine negle.</blockquote>
+            <p class="award-card__attr">— Costume Skønhedsfavoritter 2023 · <a href="https://woman.dk/skoenhed/skoenhedsfavoritter/her-er-vinderne-af-costume-skoenhedsfavoritter-2023" target="_blank" rel="noopener">woman.dk</a></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="awards__press">
+        <p class="awards__press-label">Omtalt og hædret af</p>
+        <div class="press-strip">
+          <a class="press-strip__item"
+             href="https://www.voguescandinavia.com/articles/3-at-home-diy-alternatives-to-your-next-nail-appointment"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual press-strip__visual--logo">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-vogue-scandinavia.png"
+                   alt="Vogue Scandinavia">
+            </div>
+            <span class="press-strip__caption"><strong>Feature</strong>November 2023</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://www.danskerhverv.dk/branche/digital-handel/e-handelsprisen/tidligere-vindere/e-handelsprisen-2023/"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual press-strip__visual--medal press-strip__visual--medal-ehandel">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-ehandelsprisen-2023.png"
+                   alt="E-Handelsprisen Vinder">
+            </div>
+            <span class="press-strip__caption"><strong>E-Handelsprisen</strong>Vinder 2023 &amp; 2024</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://www.danishbeautyaward.dk/2024"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual press-strip__visual--medal">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-dba-2024-winner.png"
+                   alt="Danish Beauty Award Vinder 2024">
+            </div>
+            <span class="press-strip__caption"><strong>Danish Beauty Award</strong>Vinder 2024</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://woman.dk/skoenhed/skoenhedsfavoritter/her-er-vinderne-af-costume-skoenhedsfavoritter-2025"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual press-strip__visual--logo press-strip__visual--logo-costume">
+              <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-costume.png"
+                   alt="Costume">
+            </div>
+            <span class="press-strip__caption"><strong>Skønhedsfavoritter</strong>Vinder 2023 · 2024 · 2025</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 21 -->
+  <section class="list-21">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">De 21 vi har fjernet</p>
+        <h2 class="h-display section__title">Hvad vi siger nej til</h2>
+        <p class="section__lede">Hver ingrediens på listen er enten reguleret af EU, dokumenteret allergifremkaldende eller på vej væk fra markedet. Vi var bare lidt hurtigere end lovgivningen.</p>
+      </div>
+
+      <div class="list-21__tags">
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>HEMA</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Di-HEMA</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Hydroquinone</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>TPO</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Parabener</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Parfume</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Formaldehyd</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Formaldehydharpiks</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>TMPTA</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Animalske ingredienser</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Xylene</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Kolophonium</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Tosylamid</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Benzophenone</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Toluen</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Ftalater</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Camphor</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Azofarvestoffer</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Mikroplastik</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>PFAS</span>
+        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Palmeolie</span>
+      </div>
+
+      <div class="details">
+        <div class="details__item">
+          <span class="details__num">01</span>
+          <h3 class="details__name">HEMA</h3>
+          <p class="details__desc">Et af de mest almindelige allergener i gel polish. Mange udvikler kontaktallergi efter længere tids brug.</p>
+        </div>
+        <div class="details__item">
+          <span class="details__num">02</span>
+          <h3 class="details__name">Di-HEMA</h3>
+          <p class="details__desc">Tæt slægtning til HEMA med samme allergi-risici. Almindeligt brugt som krydsbinder.</p>
+        </div>
+        <div class="details__item">
+          <span class="details__num">03</span>
+          <h3 class="details__name">TPO</h3>
+          <p class="details__desc">Forbudt i EU-kosmetik siden september 2025. Mistænkt for at påvirke fertilitet.</p>
+        </div>
+        <div class="details__item">
+          <span class="details__num">04</span>
+          <h3 class="details__name">Formaldehyd</h3>
+          <p class="details__desc">Klassificeret som kræftfremkaldende. Bruges som hærder i mange neglelakker.</p>
+        </div>
+        <div class="details__item">
+          <span class="details__num">05</span>
+          <h3 class="details__name">Ftalater</h3>
+          <p class="details__desc">Blødgørere mistænkt for at være hormonforstyrrende, særligt skadelige under graviditet.</p>
+        </div>
+        <div class="details__item">
+          <span class="details__num">06</span>
+          <h3 class="details__name">Mikroplastik &amp; PFAS</h3>
+          <p class="details__desc">Forurener havmiljøet, ophobes i kroppen og er på vej til at blive forbudt i EU-kosmetik.</p>
+        </div>
+        <!-- truncated — vi kan tilføje uddybende beskrivelser for alle 21 hvis ønsket -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="compare">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow">Vejledning</p>
+        <h2 class="h-display section__title">Sådan vælger du klogt</h2>
+        <p class="section__lede">Det kan være svært at gennemskue en ingrediensliste. Her er en hurtig tjekliste til dit næste køb — og en gennemgang af hvordan vi gør det hos os.</p>
+      </div>
+      <div class="compare__grid">
+        <div class="compare__col">
+          <p class="compare__col-eyebrow">Tjekliste</p>
+          <h3 class="compare__col-title">Hvad du bør være obs på</h3>
+          <ul class="compare__list">
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Tjek ingredienslisten for HEMA, Di-HEMA og TPO — de mest almindelige allergener.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Spørg om brandet er CPNP-registreret og overholder EU's kosmetik-forordning.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Vælg parfume-fri formuleringer hvis du er sensitiv eller allergisk.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Find ud af, om der er klinisk dokumentation for stabilitet og holdbarhed.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Se efter vegan- og cruelty-free certificering hvis det betyder noget for dig.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#2D2D2D" stroke-width="1.3" fill="none"/><circle cx="6" cy="6" r="1.4" fill="#2D2D2D"/></svg></span>Spørg ind til, hvor produkterne er udviklet og produceret.</li>
+          </ul>
+        </div>
+        <div class="compare__col compare__col--us">
+          <p class="compare__col-eyebrow">Neglefeber 21FREE</p>
+          <h3 class="compare__col-title">Sådan gør vi</h3>
+          <ul class="compare__list">
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>0 af de 21 ingredienser på vores tjekliste — fra HEMA og TPO til mikroplastik og PFAS.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CPNP-registreret, REACH-overholdende og produceret i Europa.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ingen tilsat parfume — formulationen står og falder på sin egen kvalitet.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hver batch testes klinisk for stabilitet, holdbarhed og hudvenlighed.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>100% vegansk og certificeret cruelty-free.</li>
+            <li><span class="compare__list-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M3 6.5L5 8.5L9 4" stroke="#601119" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Konceptet er udviklet i Danmark — produktionen finder sted i Europa under strenge regler.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow">Vores løfte</p>
+        <h2 class="h-display section__title">Mere end et marketing-claim</h2>
+      </div>
+      <div class="trust__grid">
+        <div class="trust__item">
+          <p class="trust__num">01</p>
+          <h3 class="trust__title">EU-godkendt</h3>
+          <p class="trust__text">Produceret i Europa under strenge regler. CPNP-registreret og overholder REACH.</p>
+        </div>
+        <div class="trust__item">
+          <p class="trust__num">02</p>
+          <h3 class="trust__title">100% Vegansk</h3>
+          <p class="trust__text">Ingen animalske ingredienser. Ingen dyreforsøg. Certificeret cruelty-free.</p>
+        </div>
+        <div class="trust__item">
+          <p class="trust__num">03</p>
+          <h3 class="trust__title">Klinisk testet</h3>
+          <p class="trust__text">Hver batch testes for stabilitet, holdbarhed og hudvenlighed inden den når dig.</p>
+        </div>
+        <div class="trust__item">
+          <p class="trust__num">04</p>
+          <h3 class="trust__title">Salon-grade</h3>
+          <p class="trust__text">Samme professionelle kvalitet som negletekniker-salons bruger — udviklet til hjemmebrug.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial__stars">★ ★ ★ ★ ★</div>
+      <p class="testimonial__quote">"Endelig en gel polish jeg kan bruge uden at mine negle bliver tynde og skøre. Forskellen kunne mærkes efter tre uger."</p>
+      <p class="testimonial__author">MARIA K. — VERIFICERET KØBER</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="container">
+      <h2 class="h-display final__title">Klar til 21FREE?</h2>
+      <p class="final__lede">Prøv en starterkit eller pluk dine yndlingsfarver. Over 100 nuancer at vælge mellem.</p>
+      <a href="/collections/all" class="btn">Shop kollektionen</a>
+    </div>
+  </section>
+
+</body>
+</html>
