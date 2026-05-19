@@ -262,6 +262,123 @@
     display: block;
   }
 
+  /* ===== AWARDS (3 team photos with judge quotes) ===== */
+  .awards {
+    background: var(--linen);
+  }
+  .awards__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .award-card {
+    background: var(--porcelain);
+    border: 1px solid var(--fog);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .award-card__media {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--linen);
+  }
+  .award-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .award-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--mahogany);
+    color: var(--arctic);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    border-radius: var(--radius);
+    line-height: 1;
+  }
+  .award-card__body {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .award-card__source {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--mahogany);
+    margin: 0 0 8px;
+  }
+  .award-card__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 20px;
+  }
+  .award-card__quote {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+    quotes: """ """;
+    flex: 1;
+  }
+  .award-card__quote::before {
+    content: open-quote;
+  }
+  .award-card__quote::after {
+    content: close-quote;
+  }
+  .award-card__attr {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--charcoal);
+    opacity: 0.55;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .awards__press {
+    margin: 64px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid var(--fog);
+    text-align: center;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--charcoal);
+    opacity: 0.75;
+    letter-spacing: 0.3px;
+  }
+  .awards__press a {
+    color: var(--mahogany);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid var(--mahogany);
+    padding-bottom: 1px;
+  }
+  .awards__press a:hover { opacity: 0.7; }
+
   /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
   .list-21 { background: var(--arctic); }
   .list-21__tags {
@@ -488,6 +605,7 @@
     .hero__content { padding: 48px 32px; }
     .hero__media { min-height: 360px; }
     .manifesto__grid { grid-template-columns: 1fr; gap: 48px; }
+    .awards__grid { grid-template-columns: 1fr; gap: 16px; }
     .compare__grid { grid-template-columns: 1fr; }
     .trust__grid { grid-template-columns: repeat(2, 1fr); }
     .details__item { grid-template-columns: 56px 1fr; }
@@ -568,6 +686,63 @@
                alt="Neglefeber gel polish 505 White">
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow">Anerkendelser</p>
+        <h2 class="h-display section__title">Branchen har stemplet 21FREE</h2>
+        <p class="section__lede">Dommere fra Danmarks vigtigste awards har vurderet både formula, oplevelse og vækst. Resultatet: tre stjerneklare vindere over to år.</p>
+      </div>
+
+      <div class="awards__grid">
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/dba_169.jpg"
+                 alt="Neglefeber-teamet modtager Danish Beauty Award 2024">
+            <span class="award-card__badge">Vinder 2024</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">Danish Beauty Award</p>
+            <h3 class="award-card__title">Årets Beauty Accessory</h3>
+            <blockquote class="award-card__quote">Et imponerende stykke arbejde, der ligger bag hele dette brand. En imponerende samling tools, som dommerne fik til vurdering samlet i en gennemført taske, der holder styr på al grejet.</blockquote>
+            <p class="award-card__attr">— Dommernes begrundelse</p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/Ehandel_169.jpg"
+                 alt="Neglefeber-teamet modtager E-Handelsprisen 2024">
+            <span class="award-card__badge">Vinder 2024</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">E-Handelsprisen · Dansk Erhverv</p>
+            <h3 class="award-card__title">Bedste webshop &lt; 100 mio. kr.</h3>
+            <blockquote class="award-card__quote">Neglefeber har med en imponerende vækstkurve og en sublim kundeoplevelse cementeret sin position som en klar vinder i markedet.</blockquote>
+            <p class="award-card__attr">— Dommernes begrundelse</p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <div class="award-card__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/Screenshot_2024-09-19_at_12.49.38.png"
+                 alt="Costume Skønhedsfavoritter — Neglesæt diplomer">
+            <span class="award-card__badge">Vinder 2024</span>
+          </div>
+          <div class="award-card__body">
+            <p class="award-card__source">Costume Skønhedsfavoritter</p>
+            <h3 class="award-card__title">Vinder i kategorien Neglesæt</h3>
+            <blockquote class="award-card__quote">Med The Gel Collection kan du selv lave din egen shellac-lignende manicure derhjemme. Udover at være pæne, er de smarte produkter også ekstra skånsomme for dine negle.</blockquote>
+            <p class="award-card__attr">— Dommernes vurdering</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="awards__press">Som omtalt i <a href="https://www.voguescandinavia.com/articles/3-at-home-diy-alternatives-to-your-next-nail-appointment" target="_blank" rel="noopener">Vogue Scandinavia</a> · November 2023</p>
     </div>
   </section>
 
