@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>21FREE™ — Neglefeber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: local('Nimbus Sans Novus'), local('Helvetica Neue'), local('Arial');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Nimbus Sans Novus Cond';
+    src: local('Nimbus Sans Novus Cond'), local('Helvetica Neue Condensed'), local('Arial Narrow');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  :root {
+    --mahogany: #601119;
+    --charcoal: #2D2D2D;
+    --arctic: #FCFBFB;
+    --porcelain: #F8F7F6;
+    --linen: #F1EFED;
+    --fog: #E7E5E3;
+    --green: #10682f;
+    --green-tint: #10682f1a;
+    --stock-green: #00B67A;
+    --font-body: 'Nimbus Sans Novus', system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-display: 'Nimbus Sans Novus Cond', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--arctic);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--mahogany);
+    margin: 0 0 16px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--porcelain);
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--green-tint);
+    color: var(--charcoal);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+    padding: 8px 12px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  .hero__hashtag {
+    display: inline-block;
+    margin-left: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--charcoal);
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 2px;
+  }
+  .hero__title {
+    font-size: clamp(48px, 6.5vw, 88px);
+    margin: 0 0 24px;
+    color: var(--charcoal);
+  }
+  .hero__title .accent { color: var(--mahogany); }
+  .hero__lede {
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0 0 28px;
+    max-width: 520px;
+  }
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mahogany);
+    color: var(--arctic);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 28px;
+    height: 52px;
+    border-radius: 2px;
+    transition: opacity .2s ease;
+  }
+  .hero__cta:hover { opacity: 0.9; }
+  .hero__media {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hero__drop {
+    position: absolute;
+    inset: -8% -4% -4% -2%;
+    width: 110%;
+    height: 110%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  /* ===== INTRO STRIP ===== */
+  .strip {
+    background: var(--charcoal);
+    color: var(--arctic);
+    padding: 24px 0;
+    overflow: hidden;
+  }
+  .strip__inner {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+  .strip__item {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  .strip__item--mahogany { color: #d8a8af; }
+
+  /* ===== SECTION DEFAULTS ===== */
+  section {
+    padding: 96px 0;
+  }
+  .section__head {
+    max-width: 720px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+  .section__title {
+    font-size: clamp(36px, 4vw, 52px);
+    margin: 0 0 16px;
+  }
+  .section__lede {
+    font-size: 17px;
+    color: var(--charcoal);
+    opacity: 0.8;
+  }
+
+  /* ===== WHY SECTION (2-column) ===== */
+  .why {
+    background: var(--arctic);
+  }
+  .why__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .why__title {
+    font-size: clamp(36px, 4vw, 52px);
+    margin: 0 0 24px;
+  }
+  .why__text p {
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0 0 16px;
+  }
+  .why__media {
+    aspect-ratio: 4/5;
+    background: var(--linen);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .why__media-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background:
+      radial-gradient(circle at 30% 30%, #f0d5d8 0%, transparent 60%),
+      radial-gradient(circle at 70% 65%, #e6e1da 0%, transparent 55%),
+      var(--linen);
+  }
+  .why__media-svg::after {
+    content: 'Foto: laboratorie / formulation';
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 11px;
+    opacity: 0.4;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ===== THE 21 LIST ===== */
+  .list-21 {
+    background: var(--porcelain);
+  }
+  .list-21__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .chem {
+    background: var(--arctic);
+    border: 1px solid var(--fog);
+    border-radius: 4px;
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .chem:hover {
+    border-color: var(--mahogany);
+    transform: translateY(-2px);
+  }
+  .chem__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .chem__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--mahogany);
+    letter-spacing: 0.5px;
+  }
+  .chem__icon {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--mahogany);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .chem__icon svg { width: 10px; height: 10px; }
+  .chem__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .chem__desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--charcoal);
+    opacity: 0.65;
+    margin: 0;
+  }
+
+  /* ===== COMPARISON ===== */
+  .compare {
+    background: var(--charcoal);
+    color: var(--arctic);
+  }
+  .compare .section__title { color: var(--arctic); }
+  .compare .section__lede { color: var(--arctic); opacity: 0.7; }
+  .compare__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .compare__col {
+    background: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    padding: 36px 32px;
+  }
+  .compare__col--us {
+    background: var(--mahogany);
+    border-color: var(--mahogany);
+  }
+  .compare__col-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--arctic);
+    opacity: 0.7;
+    margin: 0 0 12px;
+  }
+  .compare__col-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--arctic);
+    margin: 0 0 24px;
+  }
+  .compare__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .compare__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--arctic);
+  }
+  .compare__list li:last-child { border-bottom: 0; }
+  .compare__list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 1px;
+  }
+  .compare__list--bad li::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2l6 6M8 2l-6 6' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+  .compare__list--good li::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5.5L4 7.5L8 3' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+    background-color: rgba(255,255,255,0.25);
+  }
+
+  /* ===== TRUST BADGES ===== */
+  .trust {
+    background: var(--arctic);
+    padding: 80px 0;
+  }
+  .trust__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .trust__item {
+    padding: 24px;
+  }
+  .trust__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--linen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mahogany);
+  }
+  .trust__icon svg { width: 28px; height: 28px; }
+  .trust__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    letter-spacing: 0.5px;
+  }
+  .trust__text {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  /* ===== TESTIMONIAL ===== */
+  .testimonial {
+    background: var(--linen);
+    padding: 96px 0;
+    text-align: center;
+  }
+  .testimonial__quote {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.15;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .testimonial__stars {
+    color: var(--mahogany);
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+  .testimonial__author {
+    font-size: 15px;
+    opacity: 0.7;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final {
+    background: var(--charcoal);
+    color: var(--arctic);
+    padding: 96px 0;
+    text-align: center;
+  }
+  .final__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(40px, 5vw, 72px);
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 24px;
+  }
+  .final__lede {
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-size: 17px;
+    opacity: 0.7;
+  }
+  .final__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--arctic);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 28px;
+    height: 52px;
+    border-radius: 2px;
+    transition: opacity .2s ease;
+  }
+  .final__cta:hover { opacity: 0.9; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 990px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 32px; }
+    .why__grid { grid-template-columns: 1fr; gap: 40px; }
+    .list-21__grid { grid-template-columns: repeat(2, 1fr); }
+    .compare__grid { grid-template-columns: 1fr; }
+    .trust__grid { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 64px 0; }
+    .container { padding: 0 20px; }
+  }
+
+  @media (max-width: 540px) {
+    .hero { padding: 48px 0 32px; }
+    .list-21__grid { grid-template-columns: 1fr; }
+    .strip__inner { gap: 16px; }
+    .strip__item { font-size: 12px; letter-spacing: 0.8px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <div>
+          <span class="hero__badge">21FREE™</span>
+          <a href="#"  class="hero__hashtag">#NothingUnnecessary</a>
+        </div>
+        <h1 class="h-display hero__title">Fri for<br>21 unødvendige<br><span class="accent">kemikalier</span>.</h1>
+        <p class="hero__lede">Vores gel polish er udviklet med ét princip: hvis et ingrediens ikke gør neglene smukkere eller mere holdbare, så er det ude. Salon-kvalitet — fri for det, du ikke har brug for.</p>
+        <a href="/collections/all" class="hero__cta">Shop 21FREE gel polish</a>
+      </div>
+      <div class="hero__media">
+        <img class="hero__drop"
+             src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/21free-gel-polish.png"
+             alt="21FREE gel polish drop">
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="container strip__inner">
+      <span class="strip__item">Vegan</span>
+      <span class="strip__item strip__item--mahogany">·</span>
+      <span class="strip__item">Cruelty-free</span>
+      <span class="strip__item strip__item--mahogany">·</span>
+      <span class="strip__item">EU-godkendt</span>
+      <span class="strip__item strip__item--mahogany">·</span>
+      <span class="strip__item">Salon-grade</span>
+      <span class="strip__item strip__item--mahogany">·</span>
+      <span class="strip__item">Lavet i Europa</span>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="container">
+      <div class="why__grid">
+        <div class="why__text">
+          <p class="eyebrow">Hvorfor 21FREE?</p>
+          <h2 class="h-display why__title">Skønhed uden kompromis</h2>
+          <p>De fleste gel polishes indeholder en cocktail af ingredienser, der i bedste fald er overflødige — og i værste fald skadelige for både negle og helbred. Stoffer som HEMA, TPO og formaldehyd kan skabe allergiske reaktioner, svække neglene og er forbudt eller stærkt reguleret i flere lande.</p>
+          <p>Vi har skrottet 21 af dem. Tilbage står en formula, der bare virker — og som du kan bruge i dit hjem uden bekymring. Det er ikke et marketing-claim. Det er sådan, vi udvikler hver eneste flaske.</p>
+        </div>
+        <div class="why__media">
+          <div class="why__media-svg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 21 -->
+  <section class="list-21">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">De 21 vi har fjernet</p>
+        <h2 class="h-display section__title">Hvad vi siger nej til</h2>
+        <p class="section__lede">Hver ingrediens på listen er enten reguleret, dokumenteret allergifremkaldende eller på vej væk fra EU-markedet. Vi var bare hurtigere end lovgivningen.</p>
+      </div>
+      <div class="list-21__grid">
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">01</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">HEMA</h3>
+          <p class="chem__desc">Et af de mest almindelige allergener i gel polish. Mange udvikler kontaktallergi efter længere tids brug.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">02</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Di-HEMA</h3>
+          <p class="chem__desc">Tæt slægtning til HEMA med samme allergi-risici. Almindeligt brugt som krydsbinder.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">03</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">TPO</h3>
+          <p class="chem__desc">Forbudt i EU-kosmetik siden september 2025. Mistænkt for at påvirke fertilitet.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">04</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Hydroquinone</h3>
+          <p class="chem__desc">Blegemiddel der bruges som stabilisator. Reguleret i EU.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">05</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Parabener</h3>
+          <p class="chem__desc">Konserveringsmidler mistænkt for at være hormonforstyrrende.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">06</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Parfume</h3>
+          <p class="chem__desc">Skjuler dårlig lugt — og er en af de mest almindelige årsager til kontaktallergi.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">07</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Formaldehyd</h3>
+          <p class="chem__desc">Klassificeret som kræftfremkaldende. Bruges som hærdere i mange neglelakker.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">08</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Formaldehyd­harpiks</h3>
+          <p class="chem__desc">Tonsylamid-formaldehyd-harpiks giver klæbeevne, men er stærkt allergifremkaldende.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">09</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">TMPTA</h3>
+          <p class="chem__desc">Krydsbinder med dokumenteret hudirritation og allergi-potentiale.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">10</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Animalske ingredienser</h3>
+          <p class="chem__desc">Ingen produkter af animalsk oprindelse. 100% vegansk.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">11</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Xylene</h3>
+          <p class="chem__desc">Aromatisk opløsningsmiddel klassificeret som sundhedsskadeligt.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">12</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Kolophonium</h3>
+          <p class="chem__desc">Naturligt harpiks der er på EU's liste over allergener.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">13</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Tosylamid</h3>
+          <p class="chem__desc">Plastificeringsmiddel ofte kombineret med formaldehyd. Dobbeltallergen.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">14</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Benzophenone</h3>
+          <p class="chem__desc">UV-filter mistænkt for at være hormonforstyrrende.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">15</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Toluen</h3>
+          <p class="chem__desc">Opløsningsmiddel med skadelig påvirkning ved længere tids eksponering.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">16</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Ftalater</h3>
+          <p class="chem__desc">Blødgørere mistænkt for at være hormonforstyrrende, særligt skadelige under graviditet.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">17</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Camphor</h3>
+          <p class="chem__desc">Plastificeringsmiddel der gør negle skøre over tid.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">18</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Azofarvestoffer</h3>
+          <p class="chem__desc">Visse azofarver er kræftfremkaldende. Vi bruger kun godkendte pigmenter.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">19</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Mikroplastik</h3>
+          <p class="chem__desc">Forurener havmiljøet og er forbudt i flere EU-kosmetik-anvendelser.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">20</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">PFAS</h3>
+          <p class="chem__desc">"Forever chemicals". Ophobes i kroppen og naturen.</p>
+        </div>
+
+        <div class="chem">
+          <div class="chem__head">
+            <span class="chem__num">21</span>
+            <span class="chem__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          </div>
+          <h3 class="chem__name">Palmeolie</h3>
+          <p class="chem__desc">Vi bruger kun bæredygtigt sourcede vegetabilske olier — aldrig palmeolie.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="compare">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow" style="color:#d8a8af;">Sammenlign</p>
+        <h2 class="h-display section__title">Os vs. de andre</h2>
+        <p class="section__lede">Et hurtigt blik på, hvad du faktisk får — sammenlignet med en typisk salon-grade gel polish.</p>
+      </div>
+      <div class="compare__grid">
+        <div class="compare__col">
+          <p class="compare__col-label">Typisk gel polish</p>
+          <h3 class="compare__col-title">De andre</h3>
+          <ul class="compare__list compare__list--bad">
+            <li>Indeholder ofte HEMA, Di-HEMA og TPO</li>
+            <li>Bruger parfume til at skjule lugt</li>
+            <li>Plastificeringsmidler som tosylamid</li>
+            <li>Kan indeholde formaldehyd og harpiks</li>
+            <li>Mikroplastik og PFAS er ikke ualmindeligt</li>
+            <li>Sjældent fuldt vegansk</li>
+          </ul>
+        </div>
+        <div class="compare__col compare__col--us">
+          <p class="compare__col-label">Neglefeber 21FREE</p>
+          <h3 class="compare__col-title">Os</h3>
+          <ul class="compare__list compare__list--good">
+            <li>0 af de 21 problematiske ingredienser</li>
+            <li>Ingen tilsat parfume</li>
+            <li>Skånsomme krydsbindere uden allergi-risici</li>
+            <li>Formaldehyd-fri formulering</li>
+            <li>Ingen mikroplastik, PFAS eller ftalater</li>
+            <li>100% vegansk og cruelty-free</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section class="trust">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Vores løfte</p>
+        <h2 class="h-display section__title">Mere end et marketing-claim</h2>
+      </div>
+      <div class="trust__grid">
+        <div class="trust__item">
+          <div class="trust__icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trust__title">EU-godkendt</h3>
+          <p class="trust__text">Produceret i Europa under strenge regler. CPNP-registreret.</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-11a5 5 0 019-3 5 5 0 019 3c0 6.5-7 11-7 11h-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trust__title">100% Vegansk</h3>
+          <p class="trust__text">Ingen animalske ingredienser. Ingen dyreforsøg. Punktum.</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trust__title">Klinisk testet</h3>
+          <p class="trust__text">Hver batch er testet for stabilitet, holdbarhed og hudvenlighed.</p>
+        </div>
+        <div class="trust__item">
+          <div class="trust__icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 7v10l9 5 9-5V7l-9-5-9 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 7l9 5 9-5M12 12v10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trust__title">Salon-grade</h3>
+          <p class="trust__text">Samme kvalitet som profis bruger — udviklet til hjemmebrug.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial__stars">★ ★ ★ ★ ★</div>
+      <p class="testimonial__quote">"Endelig en gel polish jeg kan bruge uden at mine negle bliver tynde og skøre. Mærker forskellen på 3 uger."</p>
+      <p class="testimonial__author">Maria K. — verificeret køber</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="container">
+      <h2 class="final__title">Klar til at skifte?</h2>
+      <p class="final__lede">Prøv 21FREE i en starterkit eller pluk dine yndlingsfarver. Vi har 100+ at vælge mellem.</p>
+      <a href="/collections/all" class="final__cta">Shop kollektionen</a>
+    </div>
+  </section>
+
+</body>
+</html>
