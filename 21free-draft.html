@@ -367,25 +367,81 @@
   }
   .award-card__attr a:hover { opacity: 0.7; }
   .awards__press {
-    margin: 64px 0 0;
-    padding-top: 32px;
+    margin: 72px 0 0;
+    padding-top: 48px;
     border-top: 1px solid var(--fog);
-    text-align: center;
+  }
+  .awards__press-label {
     font-family: var(--font-body);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
     color: var(--charcoal);
-    opacity: 0.75;
-    letter-spacing: 0.3px;
+    opacity: 0.55;
+    text-align: center;
+    margin: 0 0 32px;
   }
-  .awards__press a {
-    color: var(--mahogany);
+  .press-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: center;
+    justify-items: center;
+  }
+  .press-strip__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     text-decoration: none;
-    font-weight: 700;
-    border-bottom: 1px solid var(--mahogany);
-    padding-bottom: 1px;
+    color: var(--charcoal);
+    transition: opacity .2s ease;
+    padding: 12px 8px;
+    width: 100%;
+    text-align: center;
   }
-  .awards__press a:hover { opacity: 0.7; }
+  .press-strip__item:hover { opacity: 0.7; }
+  .press-strip__visual {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .press-strip__visual img {
+    max-height: 64px;
+    width: auto;
+    display: block;
+  }
+  .press-strip__caption {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.65;
+    line-height: 1.4;
+  }
+  .press-strip__caption strong {
+    display: block;
+    font-weight: 700;
+    color: var(--mahogany);
+    opacity: 1;
+    font-size: 12px;
+    margin-bottom: 2px;
+    letter-spacing: 1.6px;
+  }
+  /* Vogue serif wordmark — recreates the iconic look */
+  .vogue-wordmark {
+    font-family: "Didot", "Bodoni 72", "Bodoni MT", "GFS Didot", "Playfair Display", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: 4px;
+    color: var(--charcoal);
+  }
 
   /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
   .list-21 { background: var(--arctic); }
@@ -614,6 +670,8 @@
     .hero__media { min-height: 360px; }
     .manifesto__grid { grid-template-columns: 1fr; gap: 48px; }
     .awards__grid { grid-template-columns: 1fr; gap: 16px; }
+    .press-strip { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .vogue-wordmark { font-size: 36px; }
     .compare__grid { grid-template-columns: 1fr; }
     .trust__grid { grid-template-columns: repeat(2, 1fr); }
     .details__item { grid-template-columns: 56px 1fr; }
@@ -750,7 +808,49 @@
         </article>
       </div>
 
-      <p class="awards__press">Som omtalt i <a href="https://www.voguescandinavia.com/articles/3-at-home-diy-alternatives-to-your-next-nail-appointment" target="_blank" rel="noopener">Vogue Scandinavia</a> · November 2023</p>
+      <div class="awards__press">
+        <p class="awards__press-label">Omtalt og hædret af</p>
+        <div class="press-strip">
+          <a class="press-strip__item"
+             href="https://www.voguescandinavia.com/articles/3-at-home-diy-alternatives-to-your-next-nail-appointment"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual">
+              <span class="vogue-wordmark">VOGUE</span>
+            </div>
+            <span class="press-strip__caption"><strong>Scandinavia</strong>Feature · 2023</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://www.danskerhverv.dk/branche/digital-handel/e-handelsprisen/tidligere-vindere/e-handelsprisen-2023/"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual">
+              <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-8.png"
+                   alt="E-Handelsprisen Vinder 2024">
+            </div>
+            <span class="press-strip__caption"><strong>E-Handelsprisen</strong>Vinder 2023 &amp; 2024</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://danishbeautyaward.dk/"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual">
+              <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-2.png"
+                   alt="Danish Beauty Award Vinder 2024">
+            </div>
+            <span class="press-strip__caption"><strong>Danish Beauty Award</strong>Vinder 2024</span>
+          </a>
+
+          <a class="press-strip__item"
+             href="https://woman.dk/skoenhed/skoenhedsfavoritter/her-er-vinderne-af-costume-skoenhedsfavoritter-2025"
+             target="_blank" rel="noopener">
+            <div class="press-strip__visual">
+              <img src="https://cdn.shopify.com/s/files/1/0861/8013/5211/t/9/assets/pdp-award-6.png"
+                   alt="Costume Skønhedsfavoritter Vinder 2025">
+            </div>
+            <span class="press-strip__caption"><strong>Costume</strong>Vinder 2023 · 2024 · 2025</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
