@@ -433,12 +433,20 @@
     margin-bottom: 2px;
     letter-spacing: 1.6px;
   }
+  .press-strip__visual {
+    height: 100px;
+  }
   .press-strip__visual--logo img {
-    max-height: 56px;
+    max-height: 64px;
     object-fit: contain;
   }
   .press-strip__visual--medal img {
-    max-height: 80px;
+    max-height: 100px;
+  }
+  /* E-handelsprisen badge has a dangling gold sub-tag — scale up so the main circle matches DBA size */
+  .press-strip__visual--medal-ehandel img {
+    max-height: 124px;
+    transform: translateY(4px);
   }
 
   /* ===== THE 21 (chip-tag list, matches PDP design) ===== */
@@ -821,7 +829,7 @@
           <a class="press-strip__item"
              href="https://www.danskerhverv.dk/branche/digital-handel/e-handelsprisen/tidligere-vindere/e-handelsprisen-2023/"
              target="_blank" rel="noopener">
-            <div class="press-strip__visual press-strip__visual--medal">
+            <div class="press-strip__visual press-strip__visual--medal press-strip__visual--medal-ehandel">
               <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/logo-ehandelsprisen-2023.png"
                    alt="E-Handelsprisen Vinder">
             </div>
