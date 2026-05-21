@@ -1,4 +1,4 @@
-{% comment %} v46 {% endcomment %}
+{% comment %} v47 {% endcomment %}
 <style>
   :root {
     --mahogany: #601119;
@@ -496,12 +496,12 @@
     transition: border-color .2s ease;
   }
   .chip:hover { border-color: var(--mahogany); }
-  .chip svg {
-    width: 12px;
-    height: 12px;
+  .chip__x {
+    color: var(--mahogany);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
     flex-shrink: 0;
-    /* Nudge icon down to align with x-height of mixed-case chip text */
-    transform: translateY(1px);
   }
 
   .list-21__sub {
@@ -585,7 +585,6 @@
   @supports (text-box-trim: trim-both) {
     .btn,
     .award-card__badge,
-    .chip,
     .testimonial__tp-score,
     .testimonial__quote-meta > span:not(.tp-mini-stars),
     .text-optical-y {
@@ -1141,27 +1140,27 @@
       </div>
 
       <div class="list-21__tags">
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Parfume</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Parabener</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>PFAS</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Mikroplast</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Palmeolie</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Formaldehyd</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Formaldehyd Resin</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>TMPTA</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Ingredienser fra dyr</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Azofarver</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Toluen</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Sulfater</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Phthalater</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Isothiazolinoner</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>BHT/BHA</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Benzophenoner</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Ethyl Tosylamid</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Bismuth Oxychlorid</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Triphenylphosphat</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Dibenzothiophen</span>
-        <span class="chip"><svg viewBox="0 0 10 10" fill="none"><path d="M2 2l6 6M8 2l-6 6" stroke="#601119" stroke-width="1.2" stroke-linecap="round"/></svg>Kamfer</span>
+        <span class="chip"><span class="chip__x">×</span>Parfume</span>
+        <span class="chip"><span class="chip__x">×</span>Parabener</span>
+        <span class="chip"><span class="chip__x">×</span>PFAS</span>
+        <span class="chip"><span class="chip__x">×</span>Mikroplast</span>
+        <span class="chip"><span class="chip__x">×</span>Palmeolie</span>
+        <span class="chip"><span class="chip__x">×</span>Formaldehyd</span>
+        <span class="chip"><span class="chip__x">×</span>Formaldehyd Resin</span>
+        <span class="chip"><span class="chip__x">×</span>TMPTA</span>
+        <span class="chip"><span class="chip__x">×</span>Ingredienser fra dyr</span>
+        <span class="chip"><span class="chip__x">×</span>Azofarver</span>
+        <span class="chip"><span class="chip__x">×</span>Toluen</span>
+        <span class="chip"><span class="chip__x">×</span>Sulfater</span>
+        <span class="chip"><span class="chip__x">×</span>Phthalater</span>
+        <span class="chip"><span class="chip__x">×</span>Isothiazolinoner</span>
+        <span class="chip"><span class="chip__x">×</span>BHT/BHA</span>
+        <span class="chip"><span class="chip__x">×</span>Benzophenoner</span>
+        <span class="chip"><span class="chip__x">×</span>Ethyl Tosylamid</span>
+        <span class="chip"><span class="chip__x">×</span>Bismuth Oxychlorid</span>
+        <span class="chip"><span class="chip__x">×</span>Triphenylphosphat</span>
+        <span class="chip"><span class="chip__x">×</span>Dibenzothiophen</span>
+        <span class="chip"><span class="chip__x">×</span>Kamfer</span>
       </div>
 
       <p class="list-21__sub">Klik på et stof for at læse, hvorfor vi har valgt det fra. Øverst på listen står fire stoffer markeret med <strong>+</strong> — de ligger uden for vores 21 typer, fordi de allerede er begrænset eller forbudt af EU. De er selvfølgelig heller ikke i vores produkter.</p>
