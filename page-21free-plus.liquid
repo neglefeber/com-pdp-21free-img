@@ -1,7 +1,6 @@
 {% comment %}
 21FREE+ Landing — Custom page section
-Built from /tmp/pdp-css-work/21free-draft.html v36
-Assigned via templates/page.21free-plus.json
+Built from /tmp/pdp-css-work/21free-draft.html v37
 {% endcomment %}
 
 <style>
@@ -364,6 +363,7 @@ Assigned via templates/page.21free-plus.json
     border: 0;
     quotes: """ """;
     flex: 1;
+    font-style: normal;
   }
   .award-card__quote::before {
     content: open-quote;
@@ -777,6 +777,7 @@ Assigned via templates/page.21free-plus.json
     margin: 64px auto 0;
     padding-top: 48px;
     border-top: 1px solid var(--fog);
+    font-style: normal;
   }
   .testimonial__quote-text {
     font-family: var(--font-display);
@@ -786,6 +787,7 @@ Assigned via templates/page.21free-plus.json
     color: var(--charcoal);
     margin: 0 0 24px;
     letter-spacing: -0.2px;
+    font-style: normal;
   }
   .testimonial__quote-meta {
     display: inline-flex;
@@ -796,6 +798,7 @@ Assigned via templates/page.21free-plus.json
     letter-spacing: 0.5px;
     color: var(--charcoal);
     opacity: 0.7;
+    font-style: normal;
   }
   .tp-mini-stars {
     display: inline-flex;
@@ -1359,7 +1362,7 @@ Assigned via templates/page.21free-plus.json
     <div class="container">
       <h2 class="h-display final__title">Nu kender du 21FREE.</h2>
       <p class="final__lede">Hver eneste flaske på Neglefeber er udviklet uden de 21 ingredienser, du lige har læst om. Du kan handle videre med ro i maven.</p>
-      <a href="#" class="btn" onclick="if(document.referrer && document.referrer !== window.location.href){history.back(); return false;} else {window.location.href='/collections/all'; return false;}">Shop videre</a>
+      <a href="/" class="btn">Shop videre</a>
     </div>
   </section>
 
