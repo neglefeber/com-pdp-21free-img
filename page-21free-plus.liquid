@@ -1,4 +1,4 @@
-{% comment %} v44 {% endcomment %}
+{% comment %} v45 text-box-trim {% endcomment %}
 <style>
   :root {
     --mahogany: #601119;
@@ -572,6 +572,22 @@
   }
   .accordion__body p + p {
     margin-top: 12px;
+  }
+
+  /* ===== OPTICAL BASELINE FIX — modern: text-box-trim (Chrome 133+, Safari 18+) ===== */
+  /* For elements where uppercase text needs to be vertically centered with icons/in pills/buttons */
+  @supports (text-box-trim: trim-both) {
+    .btn,
+    .award-card__badge,
+    .chip,
+    .testimonial__tp-score,
+    .testimonial__quote-meta > span:not(.tp-mini-stars),
+    .text-optical-y {
+      text-box-trim: trim-both;
+      text-box-edge: cap alphabetic;
+      transform: none !important;
+      line-height: normal;
+    }
   }
 
   /* ===== EDITORIAL COMPARE (light, two columns side by side) ===== */
