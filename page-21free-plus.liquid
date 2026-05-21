@@ -1,4 +1,4 @@
-{% comment %} v41 {% endcomment %}
+{% comment %} v42 — uses .text-optical-y from base.css {% endcomment %}
 <style>
   :root {
     --mahogany: #601119;
@@ -732,8 +732,7 @@
     font-size: 18px;
     letter-spacing: 0.5px;
     color: var(--charcoal);
-    line-height: 1;
-    transform: translateY(3px);
+    /* Optical centering handled by .text-optical-y utility class on the element */
   }
   .testimonial__tp-count {
     font-family: var(--font-body);
@@ -1256,7 +1255,7 @@
           <span class="testimonial__tp-stars" aria-label="4,9 ud af 5 stjerner">
             <span class="tp-star"></span><span class="tp-star"></span><span class="tp-star"></span><span class="tp-star"></span><span class="tp-star"></span>
           </span>
-          <span class="testimonial__tp-score">4,9 / 5</span>
+          <span class="testimonial__tp-score text-optical-y">4,9 / 5</span>
         </div>
         <p class="testimonial__tp-count">Baseret på <strong>7.393+ anmeldelser</strong> på Trustpilot</p>
         <span class="testimonial__tp-link">Læs alle anmeldelser →</span>
