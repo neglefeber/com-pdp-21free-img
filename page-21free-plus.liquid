@@ -1,4 +1,4 @@
-{% comment %} v45 text-box-trim {% endcomment %}
+{% comment %} v46 {% endcomment %}
 <style>
   :root {
     --mahogany: #601119;
@@ -496,7 +496,13 @@
     transition: border-color .2s ease;
   }
   .chip:hover { border-color: var(--mahogany); }
-  .chip svg { width: 12px; height: 12px; flex-shrink: 0; }
+  .chip svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    /* Nudge icon down to align with x-height of mixed-case chip text */
+    transform: translateY(1px);
+  }
 
   .list-21__sub {
     font-family: var(--font-body);
