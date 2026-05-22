@@ -1,0 +1,736 @@
+{% comment %} v14-EN translation {% endcomment %}
+<style>
+  :root {
+    --mahogany: #601119;
+    --charcoal: #2D2D2D;
+    --arctic: #FCFBFB;
+    --porcelain: #F8F7F6;
+    --linen: #F1EFED;
+    --fog: #E7E5E3;
+    --green: #10682f;
+    --green-tint: #10682f1a;
+    --font-body: 'Nimbus Sans Novus', system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-display: 'Nimbus Sans Novus Cond', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
+    --radius: 2px;
+    --page-pad: 80px;
+    --max: 1600px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; letter-spacing: 0; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--arctic);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+  }
+
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    color: var(--charcoal);
+  }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 0 0 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mahogany);
+    color: var(--arctic);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 28px;
+    height: 50px;
+    border-radius: var(--radius);
+    transition: opacity .2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.9; color: var(--arctic); }
+
+  /* HERO */
+  .hero {
+    background: var(--porcelain);
+    padding: 40px 0 48px;
+  }
+  .hero__card {
+    background: transparent;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 0.55fr 1fr;
+    grid-template-areas:
+      "media header"
+      "media copy";
+    gap: 24px 56px;
+    align-items: start;
+  }
+  .hero__media-wrap {
+    grid-area: media;
+    max-width: 300px;
+    align-self: center;
+  }
+  .hero__header {
+    grid-area: header;
+  }
+  .hero__copy {
+    grid-area: copy;
+  }
+  .hero__media {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: var(--fog);
+  }
+  .hero__media img,
+  .hero__media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero__caption {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--charcoal);
+    opacity: 0.65;
+    letter-spacing: 0.2px;
+  }
+  .hero__copy {
+    text-align: left;
+  }
+  .hero__badge-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    justify-content: flex-start;
+  }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--green-tint);
+    color: var(--charcoal);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    line-height: 1;
+  }
+  .hero__hashtag {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 2px;
+  }
+  .hero__title {
+    font-size: clamp(40px, 4.8vw, 72px);
+    line-height: 0.95;
+    margin: 0;
+  }
+  .hero__lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    margin: 0;
+    max-width: 560px;
+  }
+  .hero__note {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--fog);
+    max-width: 560px;
+  }
+  .hero__note-link {
+    color: var(--mahogany);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .hero__thumbs {
+    max-width: 1280px;
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .hero__thumb {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--fog);
+  }
+  .hero__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .hero__thumb:hover img { transform: scale(1.03); }
+
+  /* SEARCH */
+  .search {
+    background: var(--arctic);
+    padding: 64px 0 32px;
+  }
+  .search__wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .search__input {
+    width: 100%;
+    padding: 18px 56px 18px 24px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--charcoal);
+    background: var(--porcelain);
+    border: 1px solid var(--fog);
+    border-radius: 100px;
+    outline: none;
+    transition: border-color .2s ease;
+  }
+  .search__input:focus { border-color: var(--mahogany); }
+  .search__input::placeholder { color: var(--charcoal); opacity: 0.5; }
+  .search__icon {
+    position: absolute;
+    right: 22px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 18px;
+    height: 18px;
+    opacity: 0.55;
+    pointer-events: none;
+    display: block;
+  }
+  .search__meta {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.65;
+  }
+
+  /* PRODUCT LIST */
+  .products {
+    background: var(--arctic);
+    padding: 32px 0 96px;
+  }
+  .products__list {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid var(--fog);
+  }
+  .product-item {
+    border-bottom: 1px solid var(--fog);
+  }
+  .product-item__summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    transition: opacity .2s ease;
+  }
+  .product-item__summary::-webkit-details-marker { display: none; }
+  .product-item__summary:hover { opacity: 0.7; }
+  .product-item__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+  .product-item__count {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--charcoal);
+    opacity: 0.55;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .product-item__icon {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--charcoal);
+    line-height: 1;
+    transition: transform .2s ease;
+    user-select: none;
+  }
+  .product-item[open] .product-item__icon {
+    transform: rotate(45deg);
+    color: var(--mahogany);
+  }
+  .product-item__body {
+    padding: 0 0 28px;
+  }
+  .product-item__inci {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--charcoal);
+    opacity: 0.85;
+    margin: 0;
+    max-width: 800px;
+  }
+  .product-item--hidden {
+    display: none;
+  }
+
+  /* SAFETY SECTION */
+  .safety {
+    background: var(--linen);
+    padding: 96px 0;
+  }
+  .safety__wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .safety__title {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    margin: 0 0 24px;
+  }
+  .safety__text {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin: 0 0 24px;
+  }
+  .safety__link {
+    color: var(--mahogany);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+
+  /* FINAL CTA */
+  .final {
+    background: var(--arctic);
+    text-align: center;
+    padding: 96px 0;
+  }
+  .final__title {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+  }
+  .final__lede {
+    max-width: 560px;
+    margin: 0 auto 36px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    opacity: 0.85;
+  }
+
+  /* TABLET */
+  @media (max-width: 900px) {
+    :root { --page-pad: 40px; }
+    .hero__card {
+      grid-template-columns: 0.55fr 1fr;
+      gap: 16px 32px;
+    }
+    .hero__media-wrap { max-width: 260px; }
+    .hero__badge-row { margin-bottom: 18px; }
+    .hero__lede, .hero__note { max-width: none; }
+  }
+
+  /* MOBILE: text left, video right (matches desktop pattern but tighter) */
+  @media (max-width: 540px) {
+    :root { --page-pad: 20px; }
+    .hero { padding: 20px 0 24px; }
+    .hero__card {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      grid-template-areas:
+        "header media"
+        "copy media";
+      gap: 12px 14px;
+    }
+    .hero__media-wrap {
+      max-width: none;
+      width: 100%;
+      align-self: stretch;
+      height: 100%;
+    }
+    .hero__media {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 100%;
+    }
+    .hero__title { font-size: 24px; line-height: 1; }
+    .hero__lede { font-size: 13px; line-height: 1.45; }
+    .hero__note { margin-top: 10px; padding-top: 8px; font-size: 11.5px; line-height: 1.45; }
+    .hero__badge-row { margin-bottom: 12px; gap: 8px; flex-wrap: wrap; row-gap: 6px; }
+    .hero__badge { font-size: 11px; padding: 5px 8px; }
+    .hero__hashtag { font-size: 12.5px; }
+    .search { padding: 48px 0 24px; }
+    .search__input { padding: 16px 48px 16px 20px; font-size: 15px; }
+    .products { padding: 24px 0 72px; }
+    .product-item__summary { grid-template-columns: 1fr auto; gap: 12px; padding: 20px 0; }
+    .product-item__count { display: none; }
+    .product-item__name { font-size: 17px; line-height: 1.2; }
+    .product-item__icon { font-size: 24px; }
+    .product-item__body { padding: 0 0 24px; }
+    .product-item__inci { font-size: 14px; line-height: 1.65; }
+    .safety { padding: 72px 0; }
+    .safety__title { font-size: 32px; }
+    .safety__text { font-size: 15.5px; }
+    .final { padding: 72px 0; }
+    .final__title { font-size: 36px; }
+    .final__lede { font-size: 15.5px; }
+  }
+</style>
+
+<!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__card">
+        <div class="hero__media-wrap">
+          <div class="hero__media">
+            <video
+              src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory.mp4"
+              poster="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory-hero.jpg"
+              autoplay muted loop playsinline preload="metadata"
+              aria-label="Filling Gelaway at Persano in North Zealand, Denmark">
+            </video>
+          </div>
+        </div>
+        <div class="hero__header">
+          <div class="hero__badge-row">
+            <span class="hero__badge">INGREDIENTS</span>
+            <a href="#" class="hero__hashtag">#NothingUnnecessary</a>
+          </div>
+          <h1 class="h-display hero__title">Full transparency.<br>Every single ingredient.</h1>
+        </div>
+        <div class="hero__copy">
+          <p class="hero__lede">Full INCI list for all our products. We visit our manufacturers, see production with our own eyes — and know every single ingredient we put our name on.</p>
+          <p class="hero__note">You can also see the 21 ingredients we've excluded on our <a href="/pages/thegelcollection" class="hero__note-link">21FREE page →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="search">
+    <div class="container">
+      <div class="search__wrap">
+        <input type="search" id="ingredient-search" class="search__input" placeholder="Search for product or ingredient..." autocomplete="off">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <p class="search__meta" id="search-meta">18 products</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <div class="products__list" id="products-list">
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Gel Polish</span>
+            <span class="product-item__count">15 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Ethyl Acetate, Dimethicone, Synthetic Fluorphlogopite, +/- CI 77891, CI 15510, CI 73360, CI 77266, CI 77007, CI 19140, CI 44090, CI 74160, CI 59040, CI 18965.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Builder Gel</span>
+            <span class="product-item__count">8 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Dimethicone, Ethyl Acetate, +/- CI 77891, CI 73360, CI 77266, CI 77007, CI 19140, CI 74160.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Rubber Base</span>
+            <span class="product-item__count">10 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Hydroxycyclohexyl Phenyl Ketone, Bis(Methacryloyloxyethyl) Phosphate, +/- CI 77891, CI 77266, CI 15510, CI 73360, CI 74160, CI 77007.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Liquid Builder Gel</span>
+            <span class="product-item__count">10 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates copolymer, Ethyl Methacrylate, Silica, Dimethicone, +/- CI 77891, CI 19140, CI 73360, CI 77266, CI 77007, CI 74160.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Hard Base Coat</span>
+            <span class="product-item__count">5 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Ethyl Acetate, Synthetic Fluorphlogopite, Dimethicone.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Top Coat</span>
+            <span class="product-item__count">6 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Dimethicone, Ethyl Methacrylate, Acrylates Copolymer, Isopropyl Alcohol, Ethyl Acetate, Hydroxycyclohexyl Phenyl Ketone.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Polygel</span>
+            <span class="product-item__count">13 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Polymethyl Methacrylate, Polyethylene terephthalate, Ethyl Acetate, Synthetic Fluorphlogopite, Dimethicone, +/- CI 77891, CI 15510, CI 73360, CI77266, CI 77007, CI 74160.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Prep &amp; Prime</span>
+            <span class="product-item__count">3 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Propan-2-ol (Isopropyl alcohol), Ethyl Acetate, Isobutyl-Acetate.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Fast Acetone Remover</span>
+            <span class="product-item__count">3 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acetone, Water, Castor Oil.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Cleaner</span>
+            <span class="product-item__count">3 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Alcohol Denat. (ethanol), Aqua, Aroma Sweet Almond.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Bonder</span>
+            <span class="product-item__count">1 ingredient</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Ethyl Acetate.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Press On UV/LED Gel Glue</span>
+            <span class="product-item__count">5 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Acrylates Copolymer, Hydroxypropyl Methacrylate, Isobornyl Methacrylate, Hydroxycyclohexyl Phenyl Ketone, Ethyl Trimethybenzoyl Phenylphosphinate.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Cuticle Flower Oil</span>
+            <span class="product-item__count">15 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Olea Europaea Fruit Oil, Persea Gratissima Oil, Triticum Vulgare Germ Oil, Ricinus Communis Seed Oil, Tocopheryl Acetate, Ethylhexylglycerin, Phenethyl Alcohol, Cymbopogon Winterianus Herb Oil, Melissa Officinalis Leaf Oil, Citral, Citronellol, Eugenol, Geraniol, Limonene, Linalool.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Cuticle Oil Lemon</span>
+            <span class="product-item__count">9 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Paraffinum Liquidum, Prunus Amygdalus Dulcis Oil, Limoneme, Simmondsia Chinensis Oil, Citrus Medica Limonum Oil, Glyceryl Linonelate, Tocopheryl Acetate Citral, Retinyl Palminate, CI 47000.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Nail &amp; Cuticle Oil — No Perfume</span>
+            <span class="product-item__count">6 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Prunus Amygdalus Dulcis Oil (Almond Oil), Persea Gratissima Oil (Avocado Oil), Triticum Vulgare Germ Oil (Wheat Germ Oil), Ricinus Communis Seed Oil (Castor Oil), Tocopheryl Acetate (Vitamin E), Lanolin.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">SOS Nail Rescue</span>
+            <span class="product-item__count">22 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Butyl Acetate, Ethyl Acetate, Nitrocellulose, Adipic Acid/Neopentyl Glycol/Trimellitic Anhydride Copolymer, Isopropyl Alcohol, Acetyl Tributyl Citrate, Stearalkonium Bentonite, N-Butyl Alcohol, Silica, Benzophenone-1, Diacetone Alcohol, Tocopheryl Acetate, Dimethyl Oxobenzo Dioxasilane, Hexanal, Helianthus Annuus Seed Oil, Glycolic Acid, Phosphoric Acid, Aqua, Tremella Fuciformis Extract, Tocopherol, CI 77891, CI 77491, CI 77499.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Cuticle Remover</span>
+            <span class="product-item__count">3 ingredients</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Aqua, Glycerin, Cellulose gum.</p>
+          </div>
+        </details>
+
+        <details class="product-item">
+          <summary class="product-item__summary">
+            <span class="product-item__name">Tip Glue</span>
+            <span class="product-item__count">1 ingredient</span>
+            <span class="product-item__icon">+</span>
+          </summary>
+          <div class="product-item__body">
+            <p class="product-item__inci">Ethyl 2-cyanoacrylate.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="safety">
+    <div class="container">
+      <div class="safety__wrap">
+        <p class="eyebrow">Safety</p>
+        <h2 class="h-display safety__title">Correct use matters</h2>
+        <p class="safety__text">All UV-cured gel products contain acrylates, which can trigger allergic reactions on skin contact. Avoid contact with the skin during application. If redness, itching or other irritation occurs, remove the product immediately.</p>
+        <p class="safety__text"><a href="https://neglefeber.dk/blogs/news/vores-indsats-mod-at-mindske-allergirisiko" class="safety__link">Read more about our efforts to reduce allergy risk →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="container">
+      <h2 class="h-display final__title">Learn more about<br>the 21FREE concept.</h2>
+      <p class="final__lede">We exclude 21 ingredients from every formula — even though they're still legal. Read why.</p>
+      <a href="/pages/thegelcollection" class="btn">See 21FREE+</a>
+    </div>
+  </section>
+
+  <script>
+    // Simple live search filter
+    const input = document.getElementById('ingredient-search');
+    const meta = document.getElementById('search-meta');
+    const items = document.querySelectorAll('.product-item');
+    const total = items.length;
+    meta.textContent = total + ' products';
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        items.forEach(it => it.classList.remove('product-item--hidden'));
+        meta.textContent = total + ' products';
+        return;
+      }
+      let visible = 0;
+      items.forEach(it => {
+        const text = it.textContent.toLowerCase();
+        if (text.includes(q)) {
+          it.classList.remove('product-item--hidden');
+          if (q.length > 1) it.open = true;
+          visible++;
+        } else {
+          it.classList.add('product-item--hidden');
+          it.open = false;
+        }
+      });
+      meta.textContent = visible + ' result' + (visible !== 1 ? 's' : '') + ' for "' + q + '"';
+    });
+  </script>
+
+{% schema %}
+{"name":"Ingredients v2 EN","settings":[],"presets":[{"name":"Ingredients v2 EN"}]}
+{% endschema %}
