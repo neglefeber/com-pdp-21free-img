@@ -85,16 +85,22 @@
   }
   .hero__card {
     background: transparent;
-    display: grid;
-    grid-template-columns: 0.55fr 1fr;
-    gap: 48px;
-    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
   }
+  .hero__header {
+    margin-bottom: 36px;
+  }
+  .hero__body {
+    display: grid;
+    grid-template-columns: 1fr 0.45fr;
+    gap: 56px;
+    align-items: start;
+  }
   .hero__media-wrap {
-    max-width: 300px;
+    max-width: 260px;
+    margin-left: auto;
   }
   .hero__media {
     position: relative;
@@ -150,26 +156,26 @@
     padding-bottom: 2px;
   }
   .hero__title {
-    font-size: clamp(40px, 4.8vw, 72px);
+    font-size: clamp(48px, 6vw, 88px);
     line-height: 0.95;
-    margin: 0 0 24px;
+    margin: 0;
   }
   .hero__lede {
     font-size: 18px;
     line-height: 1.55;
     color: var(--charcoal);
     margin: 0;
-    max-width: 520px;
+    max-width: 560px;
   }
   .hero__note {
     font-size: 14px;
     line-height: 1.6;
     color: var(--charcoal);
     opacity: 0.75;
-    margin: 28px 0 0;
-    padding-top: 24px;
+    margin: 24px 0 0;
+    padding-top: 20px;
     border-top: 1px solid var(--fog);
-    max-width: 520px;
+    max-width: 560px;
   }
   .hero__note-link {
     color: var(--mahogany);
@@ -366,10 +372,11 @@
   /* TABLET */
   @media (max-width: 900px) {
     :root { --page-pad: 40px; }
-    .hero__card { grid-template-columns: 1fr; gap: 28px; justify-items: center; }
-    .hero__media-wrap { max-width: 280px; width: 100%; }
-    .hero__copy { text-align: left; width: 100%; }
-    .hero__badge-row { justify-content: flex-start; margin-bottom: 20px; }
+    .hero__header { margin-bottom: 24px; }
+    .hero__body { grid-template-columns: 1fr; gap: 24px; }
+    .hero__media-wrap { max-width: 220px; margin-left: 0; margin-right: auto; order: 2; }
+    .hero__copy { width: 100%; order: 1; }
+    .hero__badge-row { margin-bottom: 18px; }
     .hero__lede, .hero__note { max-width: none; }
   }
 
@@ -377,10 +384,11 @@
   @media (max-width: 540px) {
     :root { --page-pad: 24px; }
     .hero { padding: 20px 0 24px; }
-    .hero__card { padding: 0; gap: 16px; }
+    .hero__header { margin-bottom: 18px; }
+    .hero__body { gap: 18px; }
     .hero__media-wrap { max-width: 170px; }
-    .hero__title { font-size: 32px; line-height: 0.96; margin-bottom: 14px; }
-    .hero__lede { font-size: 14.5px; line-height: 1.5; }
+    .hero__title { font-size: 36px; line-height: 0.96; }
+    .hero__lede { font-size: 15px; line-height: 1.5; }
     .hero__note { margin-top: 14px; padding-top: 12px; font-size: 12.5px; line-height: 1.5; }
     .hero__badge-row { margin-bottom: 14px; gap: 10px; }
     .hero__badge { font-size: 12px; padding: 6px 10px; }
@@ -409,24 +417,28 @@
   <section class="hero">
     <div class="container">
       <div class="hero__card">
-        <div class="hero__media-wrap">
-          <div class="hero__media">
-            <video
-              src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory.mp4"
-              poster="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory-hero.jpg"
-              autoplay muted loop playsinline preload="metadata"
-              aria-label="Aftapning af Gelaway hos Persano i Nordsjælland">
-            </video>
-          </div>
-        </div>
-        <div class="hero__copy">
+        <div class="hero__header">
           <div class="hero__badge-row">
             <span class="hero__badge">INGREDIENSER</span>
             <a href="#" class="hero__hashtag">#NothingUnnecessary</a>
           </div>
           <h1 class="h-display hero__title">Fuld åbenhed.<br>Hver eneste ingrediens.</h1>
-          <p class="hero__lede">Komplet INCI-liste for alle vores produkter. Vi besøger vores producenter, ser produktionen med egne øjne — og kender hver eneste ingrediens vi sætter vores navn på.</p>
-          <p class="hero__note">Du kan også se de 21 ingredienser vi har valgt fra på vores <a href="/pages/thegelcollection" class="hero__note-link">21FREE-side →</a></p>
+        </div>
+        <div class="hero__body">
+          <div class="hero__copy">
+            <p class="hero__lede">Komplet INCI-liste for alle vores produkter. Vi besøger vores producenter, ser produktionen med egne øjne — og kender hver eneste ingrediens vi sætter vores navn på.</p>
+            <p class="hero__note">Du kan også se de 21 ingredienser vi har valgt fra på vores <a href="/pages/thegelcollection" class="hero__note-link">21FREE-side →</a></p>
+          </div>
+          <div class="hero__media-wrap">
+            <div class="hero__media">
+              <video
+                src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory.mp4"
+                poster="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory-hero.jpg"
+                autoplay muted loop playsinline preload="metadata"
+                aria-label="Aftapning af Gelaway hos Persano i Nordsjælland">
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </div>
