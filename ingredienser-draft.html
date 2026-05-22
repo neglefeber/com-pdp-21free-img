@@ -81,23 +81,47 @@
   /* HERO */
   .hero {
     background: var(--porcelain);
-    padding: 48px 0 64px;
+    padding: 56px 0 64px;
   }
   .hero__card {
     background: transparent;
     display: grid;
-    grid-template-columns: 1fr;
-    max-width: 900px;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 32px 0;
-    text-align: center;
+    padding: 0;
+  }
+  .hero__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--fog);
+  }
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero__caption {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--charcoal);
+    opacity: 0.65;
+    letter-spacing: 0.2px;
+  }
+  .hero__copy {
+    text-align: left;
   }
   .hero__badge-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 36px;
-    justify-content: center;
+    margin-bottom: 28px;
+    justify-content: flex-start;
   }
   .hero__badge {
     display: inline-flex;
@@ -122,26 +146,26 @@
     padding-bottom: 2px;
   }
   .hero__title {
-    font-size: clamp(44px, 5.4vw, 80px);
-    line-height: 0.92;
-    margin: 0 0 28px;
+    font-size: clamp(40px, 4.8vw, 72px);
+    line-height: 0.95;
+    margin: 0 0 24px;
   }
   .hero__lede {
     font-size: 18px;
     line-height: 1.55;
     color: var(--charcoal);
-    margin: 0 auto;
-    max-width: 560px;
+    margin: 0;
+    max-width: 520px;
   }
   .hero__note {
     font-size: 14px;
     line-height: 1.6;
     color: var(--charcoal);
     opacity: 0.75;
-    margin: 28px auto 0;
+    margin: 28px 0 0;
     padding-top: 24px;
     border-top: 1px solid var(--fog);
-    max-width: 560px;
+    max-width: 520px;
   }
   .hero__note-link {
     color: var(--mahogany);
@@ -151,6 +175,27 @@
     padding-bottom: 1px;
     white-space: nowrap;
   }
+  .hero__thumbs {
+    max-width: 1280px;
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .hero__thumb {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--fog);
+  }
+  .hero__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .hero__thumb:hover img { transform: scale(1.03); }
 
   /* SEARCH */
   .search {
@@ -314,13 +359,26 @@
     opacity: 0.85;
   }
 
+  /* TABLET */
+  @media (max-width: 900px) {
+    :root { --page-pad: 40px; }
+    .hero__card { grid-template-columns: 1fr; gap: 32px; }
+    .hero__media { aspect-ratio: 16 / 11; }
+    .hero__lede, .hero__note { max-width: none; }
+    .hero__badge-row { margin-bottom: 24px; }
+  }
+
   /* MOBILE */
   @media (max-width: 540px) {
     :root { --page-pad: 24px; }
-    .hero { padding: 32px 0 48px; }
-    .hero__card { padding: 16px 0; }
-    .hero__title { font-size: 44px; }
+    .hero { padding: 24px 0 40px; }
+    .hero__card { padding: 0; gap: 24px; }
+    .hero__media { aspect-ratio: 4 / 3; }
+    .hero__caption { font-size: 11px; margin-top: 10px; }
+    .hero__title { font-size: 40px; }
     .hero__lede { font-size: 16px; }
+    .hero__thumbs { margin-top: 32px; gap: 8px; }
+    .hero__thumb { aspect-ratio: 1 / 1; }
     .search { padding: 48px 0 24px; }
     .search__input { padding: 16px 48px 16px 20px; font-size: 15px; }
     .products { padding: 24px 0 72px; }
@@ -345,13 +403,32 @@
   <section class="hero">
     <div class="container">
       <div class="hero__card">
-        <div class="hero__badge-row">
-          <span class="hero__badge">INGREDIENSER</span>
-          <a href="#" class="hero__hashtag">#NothingUnnecessary</a>
+        <div class="hero__media-wrap">
+          <div class="hero__media">
+            <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/producent-besoeg-meeting.jpg?width=1400" alt="Lise og Signe i møde med CCO-teamet under producentbesøg i Guangzhou">
+          </div>
+          <p class="hero__caption">Lise og Signe i samtale med CCO-teamet. Guangzhou, februar 2025.</p>
         </div>
-        <h1 class="h-display hero__title">Fuld åbenhed.<br>Hver eneste ingrediens.</h1>
-        <p class="hero__lede">Komplet INCI-liste for alle vores produkter. Fordi du fortjener at vide præcis hvad du sætter på dine negle.</p>
-        <p class="hero__note">Du kan også se de 21 ingredienser vi har valgt fra på vores <a href="/pages/thegelcollection" class="hero__note-link">21FREE-side →</a></p>
+        <div class="hero__copy">
+          <div class="hero__badge-row">
+            <span class="hero__badge">INGREDIENSER</span>
+            <a href="#" class="hero__hashtag">#NothingUnnecessary</a>
+          </div>
+          <h1 class="h-display hero__title">Fuld åbenhed.<br>Hver eneste ingrediens.</h1>
+          <p class="hero__lede">Komplet INCI-liste for alle vores produkter. Vi rejser ud, mødes med dem der laver vores gel — og kender hver eneste ingrediens vi sætter vores navn på.</p>
+          <p class="hero__note">Du kan også se de 21 ingredienser vi har valgt fra på vores <a href="/pages/thegelcollection" class="hero__note-link">21FREE-side →</a></p>
+        </div>
+      </div>
+      <div class="hero__thumbs">
+        <figure class="hero__thumb">
+          <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/producent-besoeg-lobby.jpg?width=800" alt="CCO-fabrikkens indgang i Guangzhou">
+        </figure>
+        <figure class="hero__thumb">
+          <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/producent-besoeg-mixer.jpg?width=800" alt="Industriel blandekedel på CCO-fabrikken hvor gel polish produceres">
+        </figure>
+        <figure class="hero__thumb">
+          <img src="https://cdn.shopify.com/s/files/1/0249/9097/3999/files/producent-besoeg-products.jpg?width=800" alt="CCO's udstilling med produktudvalg og R&amp;D-bredde">
+        </figure>
       </div>
     </div>
   </section>
@@ -448,7 +525,7 @@
             <span class="product-item__icon">+</span>
           </summary>
           <div class="product-item__body">
-            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Polymethyl Methacrylate, Polyethylene terephthalate, Ethyl Acetate, Synthetic Fluorphlogopite, Dimethicone, +/- CI 77891, CI 15510, CI 73360, CI 77266, CI 77007, CI 74160.</p>
+            <p class="product-item__inci">Acrylates Copolymer, Ethyl Methacrylate, Polymethyl Methacrylate, Polyethylene terephthalate, Ethyl Acetate, Synthetic Fluorphlogopite, Dimethicone, +/- CI 77891, CI 15510, CI 73360, CI77266, CI 77007, CI 74160.</p>
           </div>
         </details>
 
