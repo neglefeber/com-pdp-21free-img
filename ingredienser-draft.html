@@ -86,20 +86,24 @@
   .hero__card {
     background: transparent;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 64px;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 56px;
     align-items: center;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0;
   }
+  .hero__media-wrap {
+    max-width: 380px;
+  }
   .hero__media {
     position: relative;
-    aspect-ratio: 9 / 13;
+    aspect-ratio: 9 / 16;
     overflow: hidden;
     background: var(--fog);
   }
-  .hero__media img {
+  .hero__media img,
+  .hero__media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -405,7 +409,12 @@
       <div class="hero__card">
         <div class="hero__media-wrap">
           <div class="hero__media">
-            <img src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory-hero.jpg" alt="Aftapning på Persano-fabrikken i Nordsjælland — hvor blandt andet vores Cleaner produceres">
+            <video
+              src="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory.mp4"
+              poster="https://raw.githubusercontent.com/neglefeber/com-pdp-21free-img/main/persano-factory-hero.jpg"
+              autoplay muted loop playsinline preload="metadata"
+              aria-label="Aftapning af Gelaway hos Persano i Nordsjælland">
+            </video>
           </div>
           <p class="hero__caption">Aftapning af Gelaway hos Persano i Nordsjælland — én af vores EU-producenter.</p>
         </div>
